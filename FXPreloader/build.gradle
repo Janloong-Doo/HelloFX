@@ -1,0 +1,6 @@
+group 'com.janloong'
+version '1.0-SNAPSHOT'
+
+
+archivesBaseName = "FXPreloader"
+//mainClassName = 'com.janloong.fxpreloader.MainPreloader'

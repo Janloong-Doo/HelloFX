@@ -1,0 +1,33 @@
+group 'com.janloong'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+apply plugin: 'javafx-gradle-plugin'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+jfx {
+    appName = "HelloFX"
+    // minimal requirement for jfxJar-task
+    mainClass = 'com.janloong.fxworld.MainApp'
+
+    // minimal requirement for jfxNative-task
+    vendor = 'Janloong'
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'io.datafx:flow:8.0.1'
+}

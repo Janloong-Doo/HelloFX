@@ -1,0 +1,5 @@
+rootProject.name = 'HelloFX'
+include 'FXWorld'
+include 'FXPreloader'
+include 'curlbuilder'
+

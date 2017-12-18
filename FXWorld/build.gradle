@@ -1,0 +1,88 @@
+group 'com.janloong'
+version '1.0-SNAPSHOT'
+
+description = "这是JAVAFX的主程序模块"
+archivesBaseName = "FXWorld"
+//mainClassName = 'com.janloong.fxworld.MainApp'
+
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+apply plugin: 'javafx-gradle-plugin'
+
+sourceSets {
+    main {
+        java {
+            srcDir("java")
+        }
+        resources {
+            srcDir("resources")
+        }
+    }
+
+}
+
+jar {
+//from "src/main/resouces"
+
+    manifest {
+        attributes 'Manifest-Version': '1.0'
+        attributes 'Implementation-Title': '这是程序主程序'
+        attributes 'JavaFX-Preloader-Class': 'com.janloong.fxpreloader.MainPreloader'
+        attributes 'Implementation-Version': ''
+        attributes 'Permissions': 'sandbox'
+        attributes 'JavaFX-Version': '8.0'
+//        attributes 'Class-Path': 'lib/core-8.0.1.jar '+'lib/datafx-8.0.1.jar '+'lib/flow-8.0.1.jar ' +
+//                ''+'lib/fontawesomefx-commons-8.15.jar '+'lib/fontawesomefx-commons-8.15.jar '
+//        attributes 'Class-Path': 'FXpreloader.jar'
+        attributes 'Created-By': 'JavaFX Packager'
+        attributes 'Implementation-Vendor': ''
+        attributes 'Main-Class': 'com.janloong.fxworld.MainApp'
+    }
+
+//    into("lib") {
+//        from configurations.runtime
+//    }
+}
+
+
+jfx {
+    appName = "HelloFX"
+    // minimal requirement for jfxJar-task
+    mainClass = 'com.janloong.fxworld.MainApp'
+
+    // minimal requirement for jfxNative-task
+    vendor = 'Janloong'
+}
+
+dependencies {
+    compile project(':FXPreloader')
+    compile 'io.datafx:datafx:8.0.1'
+    compile 'io.datafx:flow:8.0.1'
+//    compile 'de.jensd:fontawesomefx-fontawesome:4.7.0-9.1.2'
+    compile 'de.jensd:fontawesomefx-fontawesome:4.7.0-5'
+//    compile 'de.jensd:fontawesomefx-fontawesome:+'
+    compile 'com.jfoenix:jfoenix:+'
+
+}
+//ext {
+//    extTest = "这是ext测试啊"
+//}
+//
+//task helloword {
+//    println "Hello World! ==================="
+//    println "project: " + project
+//    println "name: " + name
+//    println "path: " + path
+//    println "description: " + project.description
+//    println "buildDir: " + buildDir
+//    println "version: " + version
+//    println "测试打印: " + extTest
+//}
+
