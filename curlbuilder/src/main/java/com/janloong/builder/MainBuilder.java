@@ -2,8 +2,6 @@ package com.janloong.builder;
 
 import com.jfoenix.controls.JFXDecorator;
 import com.jfoenix.svg.SVGGlyph;
-import io.datafx.controller.flow.context.FXMLViewFlowContext;
-import io.datafx.controller.flow.context.ViewFlowContext;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +16,7 @@ import javafx.stage.Stage;
  * @create 2017-12-14 11:46
  **/
 public class MainBuilder extends Application {
-    @FXMLViewFlowContext
-    private ViewFlowContext flowContext;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/MainBuilder.fxml"));
